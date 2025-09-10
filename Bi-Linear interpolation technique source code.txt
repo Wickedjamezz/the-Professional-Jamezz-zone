@@ -1,0 +1,35 @@
+#include "Image.h"
+#include <math.h>
+#include<stdio.h>
+
+
+
+int main() {
+	int img_width, img_height;
+	printf("User, Please kindly enter your desired image size:=> ");
+	scanf("%d%d", &img_width, &img_height);
+	GrayscaleImage Input;
+	Input.Load("images/input.png");
+    GrayscaleImage Output(img_width,img_height);
+	float scl_x = Input.GetWidth() /(float) Output.GetWidth();
+	float scl_y = Input.GetHeight() / (float)Output.GetHeight();
+	for (int y = 0; y < Output.GetHeight(); y++)
+	{
+		for (int x = 0; x < Output.GetWidth(); x++)
+		{
+			
+			int c = floor(x * scl_x);
+			int d = floor(y * scl_y);
+			float a = (x * scl_x)-c ;
+			float b = (y * scl_y)-d ;
+			float img_output = (1 - a) * (1 - b) * Input(c, d) + (1 - a) * b * Input(c, d + 1) + a * (1 - b) * Input(c + 1, d) + a * b * Input(c + 1, d + 1);
+			int output= round(img_output);
+			if (output > 255)
+				output = 255;
+			if (output < 0)
+				output = 0;
+			Output(x, y) =output;
+		}
+	}
+	Output.Save("images/output.png");
+}
