@@ -36,6 +36,7 @@ Forensic imaging and analysis using FTK Imager, with chain of custody documentat
 **Data-Encryption-Demos**
 
 Practical encryption using GnuPG and secure volume management with VeraCrypt.
+Built a Python-based secure communication system using AES encryption standard, RSA for key generation and SHA256 hash for message integrity
 
 **Cloud-Security-Labs**
 
