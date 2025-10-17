@@ -18,7 +18,7 @@ Digital Forensics: FTK Imager (evidence acquisition & analysis)
 
 Cloud Security: AWS S3 bucket security
 
-Encryption & Data Protection: GnuPG, VeraCrypt
+Encryption & Data Protection: GnuPG, VeraCrypt, Python-based secure communication system using AES and RSA with SHA256 hash
 
 Scripting & Automation: PowerShell for security tasks
 
